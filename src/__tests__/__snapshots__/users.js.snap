@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Queries fetches list of users fails if not admin 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    [GraphQLError: You must be an admin to perform this action.],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries fetches list of users if admin 1`] = `
+Object {
+  "data": Object {
+    "users": Object {
+      "items": Array [
+        Object {
+          "email": "fake2@test.com",
+          "id": "a6bf639f-6e80-4c6b-a46b-dc1373a395bf",
+        },
+        Object {
+          "email": "fake@test.com",
+          "id": "b6bf639f-6e80-4c6b-a46b-dc1373a395be",
+        },
+      ],
+      "pageInfo": Object {
+        "fromCache": false,
+        "nextCursor": null,
+        "totalCount": 2,
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

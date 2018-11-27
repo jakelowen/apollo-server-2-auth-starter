@@ -1,0 +1,65 @@
+type User {
+    id: String!
+    email: String!
+    name: String!
+    roles: [String!]
+}
+
+input UserWhereInput {
+    AND: [UserWhereInput!]
+    OR: [UserWhereInput!]
+    
+    id_is: String
+    id_not: String
+    id_in: [String!]
+    id_not_in: [String!]
+    id_lt: String
+    id_lte: String
+    id_gt: String
+    id_gte: String
+    id_contains: String
+    id_not_contains: String
+    id_starts_with: String
+    id_not_starts_with: String
+    id_ends_with: String
+    id_not_ends_with: String
+
+    email_is: String
+    email_not: String
+    email_in: [String!]
+    email_not_in: [String!]
+    email_lt: String
+    email_lte: String
+    email_gt: String
+    email_gte: String
+    email_contains: String
+    email_not_contains: String
+    email_starts_with: String
+    email_not_starts_with: String
+    email_ends_with: String
+    email_not_ends_with: String
+}
+
+input UserWhereUniqueInput {
+    id: String
+  }
+
+input UserOrdering {
+    sort: UserSort!
+    direction: Direction! = ASC
+}
+
+enum UserSort { id, email }
+
+type usersResults {
+    items: [User!]
+    pageInfo: PageInfo
+}
+
+type Query {
+    users(where: UserWhereInput, orderBy: [UserOrdering!], limit: Int, after: String ): usersResults!
+    user(where: UserWhereUniqueInput ): User
+}
+
+
+

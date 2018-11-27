@@ -1,0 +1,37 @@
+type Mutation {
+    register(name: String!, email: String!): RegisterResponse!
+    requestLogin(email: String!): ReguestLoginResponse!
+    signout: SignOutResponse
+    confirmLogin(token: String!): ConfirmLoginResponse!
+}
+
+type Query {
+    me: User
+}
+
+type ReguestLoginResponse {
+    code: String!
+    success: Boolean!
+    message: String!
+    securityCode: String
+}
+
+type RegisterResponse {
+    code: String!
+    success: Boolean!
+    message: String!
+    securityCode: String
+}
+
+type SignOutResponse {
+    code: String!
+    success: Boolean!
+    message: String!
+}
+
+type ConfirmLoginResponse {
+    code: String!
+    success: Boolean!
+    message: String!
+    user: User
+}

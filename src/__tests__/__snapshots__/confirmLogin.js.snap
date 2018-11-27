@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmLogin Happy Path 1`] = `
+Object {
+  "data": Object {
+    "confirmLogin": Object {
+      "code": "ok",
+      "message": "You have successfully logged in. You may close this window and return to your previous tab to continue!",
+      "success": true,
+      "user": Object {
+        "id": "0b986756-e6e3-4bec-bb3c-fe5ce28d0751",
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`ConfirmLogin response if no matching user 1`] = `
+Object {
+  "data": Object {
+    "confirmLogin": Object {
+      "code": "noUser",
+      "message": "This token is either invalid or expired!",
+      "success": false,
+      "user": null,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`ConfirmLogin throws error if logged in 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    [GraphQLError: You must not be logged in to perform this action.],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

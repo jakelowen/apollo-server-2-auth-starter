@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register does not update name if record already exists 1`] = `
+Object {
+  "data": Object {
+    "register": Object {
+      "code": "alreadyExists",
+      "message": "User already exists for email fake@test.com. Try Logging in.",
+      "securityCode": null,
+      "success": false,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Register throws error if logged in 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    [GraphQLError: You must not be logged in to perform this action.],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

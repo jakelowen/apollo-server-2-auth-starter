@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ME Happy Path no perms 1`] = `
+Object {
+  "data": Object {
+    "me": Object {
+      "email": "fake124@test.com",
+      "id": "0b986756-e6e3-4bec-bb3c-fe5ce28d0752",
+      "name": "fake dude",
+      "roles": Array [
+        "applicant",
+      ],
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`ME Happy Path with perms 1`] = `
+Object {
+  "data": Object {
+    "me": Object {
+      "email": "fake124@test.com",
+      "id": "0b986756-e6e3-4bec-bb3c-fe5ce28d0752",
+      "name": "fake dude",
+      "roles": Array [
+        "bar",
+        "foo",
+      ],
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`ME throws error if not logged in 1`] = `
+Object {
+  "data": Object {
+    "me": null,
+  },
+  "errors": Array [
+    [GraphQLError: You must be logged in to do this],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

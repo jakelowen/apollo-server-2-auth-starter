@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RequestLogin encourages redirect if not current user 1`] = `
+Object {
+  "data": Object {
+    "requestLogin": Object {
+      "code": "noUser",
+      "message": "No such user found for email notauser@test.com",
+      "securityCode": null,
+      "success": false,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`RequestLogin throws error if logged in 1`] = `
+Object {
+  "data": null,
+  "errors": Array [
+    [GraphQLError: You must not be logged in to perform this action.],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
